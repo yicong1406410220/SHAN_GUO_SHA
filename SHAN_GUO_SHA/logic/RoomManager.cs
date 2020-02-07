@@ -11,7 +11,7 @@ public class RoomManager
 	//创建房间
 	public static Room AddRoom(){
 		maxId++;
-		Room room = new Room();
+		Room room = new Room(maxId, 2, "");
 		room.id = maxId;
 		rooms.Add(room.id, room);
 		return room;

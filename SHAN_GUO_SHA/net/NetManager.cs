@@ -22,6 +22,7 @@ class NetManager
         string msg = Utils.Js.Serialize(obj);
         if (sessionManager.IDs.Contains(ID))
         {
+            Console.WriteLine("Send " + ID + ":" + msg);
             sessionManager[ID].Context.WebSocket.Send(msg);
         }
     }

@@ -13,17 +13,16 @@ class GameWebSocketBehavior : WebSocketBehavior
     protected override void OnMessage(MessageEventArgs e)
     {
         string msgBase = e.Data;
+        Console.WriteLine("Receive " + ID + ":" + msgBase);
         //反序列化
         ProtocolBase protocolBase = Utils.Js.Deserialize<ProtocolBase>(msgBase);
         //分发消息
         MethodInfo mi = typeof(MsgHandler).GetMethod(protocolBase.protocolName);
         object[] o = { ID, msgBase };
-        Console.WriteLine("Receive " + protocolBase.protocolName);
         if (mi != null)
         {
             mi.Invoke(null, o);
         }
-        Console.WriteLine(e.Data);
     }
 
     protected override void OnOpen()
