@@ -23,6 +23,11 @@ class NetManager
         if (sessionManager.IDs.Contains(ID))
         {
             Console.WriteLine("Send " + ID + ":" + msg);
+            if (obj.protocolName != "Ping_C_Protocol" && obj.protocolName != "Pong_S_Protocol")
+            {
+                SGS.Log.File = "log_" + ID;
+                SGS.Log.Info("Send_" + ID + ":" + msg);
+            }
             sessionManager[ID].Context.WebSocket.Send(msg);
         }
     }

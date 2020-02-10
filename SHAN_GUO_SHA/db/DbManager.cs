@@ -127,6 +127,7 @@ public class DbManager {
 		}
 		//序列化
 		PlayerData playerData = new PlayerData ();
+        playerData.id = id;
         playerData.nickname = id;
 		string data = Js.Serialize(playerData); 
 		//写入数据库

@@ -16,6 +16,11 @@ class GameWebSocketBehavior : WebSocketBehavior
         Console.WriteLine("Receive " + ID + ":" + msgBase);
         //反序列化
         ProtocolBase protocolBase = Utils.Js.Deserialize<ProtocolBase>(msgBase);
+        if (protocolBase.protocolName != "Ping_C_Protocol" && protocolBase.protocolName != "Pong_S_Protocol")
+        {
+            SGS.Log.File = "log_" + ID;
+            SGS.Log.Info("Receive_" + ID + ":" + msgBase);
+        }
         //分发消息
         MethodInfo mi = typeof(MsgHandler).GetMethod(protocolBase.protocolName);
         object[] o = { ID, msgBase };
@@ -28,6 +33,7 @@ class GameWebSocketBehavior : WebSocketBehavior
     protected override void OnOpen()
     {
         Console.WriteLine("打开Socket");
+        Log.Level = LogLevel.Info;
     }
 
     protected override void OnClose(CloseEventArgs e)

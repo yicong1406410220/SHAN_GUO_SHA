@@ -9,9 +9,9 @@ public class RoomManager
 	public static Dictionary<int, Room> rooms = new Dictionary<int, Room>();
 
 	//创建房间
-	public static Room AddRoom(){
+	public static Room AddRoom(string name){
 		maxId++;
-		Room room = new Room(maxId, 2, "");
+		Room room = new Room(maxId, name, 2, "");
 		room.id = maxId;
 		rooms.Add(room.id, room);
 		return room;
