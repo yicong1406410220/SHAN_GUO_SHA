@@ -5,8 +5,9 @@ public class PlayerManager
 {
 	//玩家列表
 	static Dictionary<string, Player> players = new Dictionary<string, Player>();
-	//玩家是否在线
-	public static bool IsOnline(string id){
+
+    //玩家是否在线
+    public static bool IsOnline(string id){
 		return players.ContainsKey(id);
 	}
 	//获取玩家

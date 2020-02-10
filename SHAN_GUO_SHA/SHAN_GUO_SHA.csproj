@@ -37,7 +37,9 @@
     <Reference Include="MySql.Data, Version=8.0.17.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,11 +52,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="db\DbManager.cs" />
+    <Compile Include="logic\Game\Game.cs" />
+    <Compile Include="logic\Game\Country.cs" />
+    <Compile Include="logic\Game\Hero\HeroBase.cs" />
+    <Compile Include="logic\Game\poker.cs" />
+    <Compile Include="logic\Game\RolePlayer.cs" />
     <Compile Include="logic\MsgHandler\GlobalMsgHandler.cs" />
     <Compile Include="logic\MsgHandler\LoginMsgHandler.cs" />
     <Compile Include="logic\Player.cs" />
     <Compile Include="logic\RoomManager.cs" />
-    <Compile Include="Protocol\PlayerData.cs" />
+    <Compile Include="Protocol\Data\RoomData.cs" />
+    <Compile Include="Protocol\HallProcol.cs" />
+    <Compile Include="Protocol\Data\PlayerData.cs" />
     <Compile Include="logic\PlayerManager.cs" />
     <Compile Include="logic\Room.cs" />
     <Compile Include="net\GameWebSocketBehavior.cs" />
@@ -70,5 +79,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
