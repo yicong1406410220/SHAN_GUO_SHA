@@ -16,16 +16,17 @@ public class HeroBase
     /// </summary>
     public string name;
     /// <summary>
-    /// 技能描述
-    /// </summary>
-    public Dictionary<string, string> SkillsToDescribe = new Dictionary<string, string>();
-    /// <summary>
     /// 血量
     /// </summary>
     public int Hp = 4;
     /// <summary>
     /// 国家
     /// </summary>
-    public string country; 
+    public string country;
+    /// <summary>
+    /// 技能描述
+    /// </summary>
+    public Dictionary<string, string> SkillsToDescribe = new Dictionary<string, string>();
+
 
 }

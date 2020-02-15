@@ -74,11 +74,11 @@ public class PokerBase
     {
         get
         {
-            if ((int)viceType < 5)
+            if ((int)viceType < 4)
             {
                 return MainType.基本牌;
             }
-            else if ((int)viceType < 7)
+            else if ((int)viceType < 6)
             {
                 return MainType.锦囊牌;
             }
