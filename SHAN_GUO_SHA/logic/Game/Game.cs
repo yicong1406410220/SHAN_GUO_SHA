@@ -14,12 +14,14 @@ class Game
     /// </summary>
     public int playNum;
 
-    public GamePlayer gamePlayer;
+    public GamePlayer[] gamePlayer;
 
     /// <summary>
     /// 谁的回合
     /// </summary>
     public int WhoTurn = -1;
+
+    TouchPile
 
     /// <summary>
     /// 阶段数

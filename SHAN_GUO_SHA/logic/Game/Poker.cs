@@ -4,24 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class PokerBase
+public class Poker
 {
-    ///// <summary>
-    ///// 花色点数
-    ///// </summary>
-    //public Suit suit;
-    //public enum Suit
-    //{
-    //    无色,
-    //    黑桃,
-    //    红杏,
-    //    梅花,
-    //    方片,
-    //}
 
-    //public string points;
+    public Poker(int pokerValue)
+    {
+        this.pokerValue = pokerValue;
+    }
+
+    public Poker(PokerColor Color, PokerDetailType DetailType)
+    {
+        this.Color = Color;
+        this.DetailType = DetailType;
+    }
 
     public int pokerValue = 0x00;
+
+   
     public PokerColor Color
     {
         get
