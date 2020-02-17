@@ -8,25 +8,30 @@ using System.Threading.Tasks;
 public class HeroBase
 {
     /// <summary>
-    /// 唯一key
-    /// </summary>
-    public int key;
-    /// <summary>
     /// 武将名
     /// </summary>
     public string name;
     /// <summary>
-    /// 血量
-    /// </summary>
-    public int Hp = 4;
-    /// <summary>
     /// 国家
     /// </summary>
-    public string country;
+    public Country country;
+    public enum Country
+    {
+        魏,
+        蜀,
+        吴,
+        群,
+        神,
+    }
     /// <summary>
     /// 技能描述
     /// </summary>
     public Dictionary<string, string> SkillsToDescribe = new Dictionary<string, string>();
 
-
+    public enum SkillType
+    {
+        主动,
+        被动,
+        常规
+    } 
 }
