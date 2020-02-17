@@ -16,25 +16,18 @@ public class Player
 
     //是否断线
     public bool IsOffLine = false;
-    //在哪个场景
-    public SceneStatus sceneStatus = SceneStatus.Hall;
+
     //用户状态
-    public UserStatus userStatus = UserStatus.Stand;
+    public UserStatus userStatus = UserStatus.InHall;
     public enum UserStatus
     {
-        Stand,   //站立
+        InHall,   //在大厅
+        Stand,   //在房间内
         Sit,     //坐下
         Ready,   //准备
         Battle,   //战斗
         RePlay,   //回放
         LookOn    //旁观
-    }
-
-    public enum SceneStatus
-    {
-        Hall,
-        Room,
-        Game
     }
 
     public Player(string ID)

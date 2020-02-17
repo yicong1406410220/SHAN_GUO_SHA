@@ -47,27 +47,53 @@ public partial class MsgHandler
             NetManager.Send(ID, msgKick);
             //断开连接
             NetManager.Close(ID);
-            PlayerManager.RemovePlayer(login_C.id);
+            Player player = PlayerManager.GetPlayer(login_C.id);
+            if (player == null)
+            {
+                login_S.flag = 1;
+                login_S.msgtext = "登录失败没有玩家数据";
+                NetManager.Send(ID, login_S);
+                return;
+            }
+            player.ID = ID;
+            //断线重连同步数据
         }
-        //获取玩家数据
-        PlayerData playerData = DbManager.GetPlayerData(login_C.id);
-        if (playerData == null)
+        else if (PlayerManager.IsOnlineData(login_C.id))
         {
-            login_S.flag = 1;
-            login_S.msgtext = "登录失败没有玩家数据";
-            NetManager.Send(ID, login_S);
-            return;
+            Player player = PlayerManager.GetPlayer(login_C.id);
+            if (player == null)
+            {
+                login_S.flag = 1;
+                login_S.msgtext = "登录失败没有玩家数据";
+                NetManager.Send(ID, login_S);
+                return;
+            }
+            player.ID = ID;
+            player.IsOffLine = false;
+            //断线重连同步数据
         }
-        //构建Player
-        Player player = new Player(ID);
-        player.id = login_C.id;
-        player.data = playerData;
-        PlayerManager.AddPlayer(login_C.id, player);
-        //登录成功
-        login_S.flag = 0;
-        login_S.msgtext = "成功";
-        login_S.playerData = playerData;
-        NetManager.Send(ID, login_S);
+        else
+        {
+            //获取玩家数据
+            PlayerData playerData = DbManager.GetPlayerData(login_C.id);
+            if (playerData == null)
+            {
+                login_S.flag = 1;
+                login_S.msgtext = "登录失败没有玩家数据";
+                NetManager.Send(ID, login_S);
+                return;
+            }
+            //构建Player
+            Player player = new Player(ID);
+            player.id = login_C.id;
+            player.data = playerData;
+            PlayerManager.AddPlayer(login_C.id, player);
+            //登录成功
+            login_S.flag = 0;
+            login_S.msgtext = "成功";
+            login_S.playerData = playerData;
+            NetManager.Send(ID, login_S);
+        }
     }
 
 

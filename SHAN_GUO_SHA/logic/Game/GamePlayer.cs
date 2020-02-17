@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-class RolePlayer
+public class GamePlayer
 {
 }
 

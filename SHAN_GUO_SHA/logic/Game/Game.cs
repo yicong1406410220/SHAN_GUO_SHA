@@ -11,7 +11,7 @@ class Game
 
     public int playNum;
 
-    public RolePlayer rolePlayer;
+    public GamePlayer gamePlayer;
 
     public Game(int roomID)
     {

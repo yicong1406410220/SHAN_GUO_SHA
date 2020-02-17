@@ -55,8 +55,8 @@
     <Compile Include="logic\Game\Game.cs" />
     <Compile Include="logic\Game\Country.cs" />
     <Compile Include="logic\Game\Hero\HeroBase.cs" />
-    <Compile Include="logic\Game\poker.cs" />
-    <Compile Include="logic\Game\RolePlayer.cs" />
+    <Compile Include="logic\Game\GamePlayer.cs" />
+    <Compile Include="logic\Game\PokerBase.cs" />
     <Compile Include="logic\MsgHandler\GlobalMsgHandler.cs" />
     <Compile Include="logic\MsgHandler\LoginMsgHandler.cs" />
     <Compile Include="logic\Player.cs" />
@@ -68,7 +68,6 @@
     <Compile Include="logic\Room.cs" />
     <Compile Include="net\GameWebSocketBehavior.cs" />
     <Compile Include="net\NetManager.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="logic\Utils.cs" />
     <Compile Include="Protocol\LoginProcol.cs" />
