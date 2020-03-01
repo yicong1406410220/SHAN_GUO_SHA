@@ -53,10 +53,7 @@
   <ItemGroup>
     <Compile Include="db\DbManager.cs" />
     <Compile Include="logic\Game\Game.cs" />
-    <Compile Include="logic\Game\Hero\HeroBase.cs" />
     <Compile Include="logic\Game\GamePlayer.cs" />
-    <Compile Include="logic\Game\Poker.cs" />
-    <Compile Include="logic\Game\TouchPile.cs" />
     <Compile Include="logic\MsgHandler\GlobalMsgHandler.cs" />
     <Compile Include="logic\MsgHandler\LoginMsgHandler.cs" />
     <Compile Include="logic\Player.cs" />

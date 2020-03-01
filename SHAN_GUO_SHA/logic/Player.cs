@@ -13,7 +13,8 @@ public class Player
     public string id = "";
     //房间ID
     public int roomId = -1;
-
+    //座位ID
+    public int seat = -1;
     //是否断线
     public bool IsOffLine = false;
 
